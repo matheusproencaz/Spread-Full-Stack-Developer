@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Flex Shrink</title>
+    <style>
+        .flex-container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 350px;
+        }
+
+        .item{
+            background-color: orangered;
+            margin: 5px;
+            font-size: 24px;
+            text-align: center;
+            color: white;
+        }
+
+        .fs-0{
+            flex-shrink: 0;
+            flex-basis: 100px;
+        }
+
+        .fg-1{
+            flex-grow: 1;
+        }
+
+        .fs-1{
+            flex-shrink: 1;
+        }
+
+        .fs-2{
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+
+        .fs-3{
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Flex-Shrink: 1</h3>
+    <div class="flex-container">
+        <div class="item fs-1 fg-1">A</div>
+        <div class="item fs-1 fg-1">B</div>
+        <div class="item fs-1 fg-1">C</div>
+        <div class="item fs-1 fg-1">D</div>
+        <div class="item fs-1 fg-1">E</div>
+    </div>
+
+    <div class="flex-container">
+        <div class="item fs-1 fg-1">A</div>
+        <div class="item fs-1 fg-1">Lorem ipsum.</div>
+        <div class="item fs-1 fg-1">C</div>
+        <div class="item fs-1 fg-1">D</div>
+        <div class="item fs-1 fg-1">E</div>
+    </div>
+
+    <h3>Flex-Shrink: 0 / Basis 100px</h3>
+    <div class="flex-container">
+        <div class="item fs-0 fg-1">A</div>
+        <div class="item fs-0 fg-1">Lorem ipsum.</div>
+        <div class="item fs-0 fg-1">C Lorem ipsum.</div>
+        <div class="item fs-0 fg-1">D</div>
+        <div class="item fs-0 fg-1">E</div>
+    </div>
+
+    <h3>Flex-Shrink: mix / Basis 100px</h3>
+    <div class="flex-container">
+        <div class="item fs-1 fg-1">A</div>
+        <div class="item fs-2 fg-1">Lorem ipsum.</div>
+        <div class="item fs-2 fg-1">C Lorem ipsum.</div>
+        <div class="item fs-0 fg-1">D</div>
+        <div class="item fs-3 fg-1">E</div>
+    </div>
+
+
+</body>
+</html>
